@@ -1,0 +1,28 @@
+
+<%= form_with(model: [@idea, @review], local: true) do |f| %>
+    <% if @review.errors.any? %>
+        <ul>
+            <% @review.errors.full_messages.each do |msg| %>
+                    <li>
+                    <%= msg %>
+                    </li>
+            <% end %>
+        </ul>
+    <% end  %>
+    
+      <div class= "flex-form review-underline">
+
+<div>
+
+    <p class="review-form-header"> Review </p>
+
+    <%= f.text_area :body, placeholder: "Enter a review here", class:"review-form-text" %>
+      </div>
+
+      
+      
+      <div class="review" >
+        <%= f.submit "Submit Review", class:"review-btn" %>
+      </div>
+</div>
+    <% end %>
